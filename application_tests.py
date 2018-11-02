@@ -15,6 +15,11 @@ class TestAccount(unittest.TestCase):
         '''
         self.new_accclass = Account("Fred","Wamalwa","0702049058","fredkheisa@gmail.com") # create contact object
 
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Account.account_list = []
 
     def test_init(self):
         '''
@@ -25,6 +30,25 @@ class TestAccount(unittest.TestCase):
         self.assertEqual(self.new_accclass.last_name,"Wamalwa")
         self.assertEqual(self.new_accclass.phone_number,"0702049058")
         self.assertEqual(self.new_accclass.email,"fredkheisa@gmail.com")
+
+    def test_save_account(self):
+        '''
+        test_save_contact test case to test if the contact object is saved into
+         the contact list
+        '''
+        self.new_accclass.save_accclass() # saving the new account
+        self.assertEqual(len(Account.account_list),1)
+    
+
+    def test_save_multiple_account(self):
+        '''
+        test_save_multiple_contact to check if we can save multiple contact
+        objects to our contact_list
+        '''
+        self.new_accclass.save_accclass()
+        test_accclass = Account("Test","user","0712345678","test@user.com") # new account
+        test_accclass.save_accclass()
+        self.assertEqual(len(Account.account_list),2)
 
 
 if __name__ == '__main__':

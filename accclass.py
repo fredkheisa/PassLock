@@ -13,3 +13,11 @@ class Account:
     self.last_name = last_name
     self.phone_number = phone_number
     self.email = email
+
+
+  def save_accclass(self):
+
+    '''
+    save_contact method saves contact objects into contact_list
+    '''
+    Account.account_list.append(self)
