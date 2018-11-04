@@ -43,6 +43,16 @@ class TestInfo(unittest.TestCase):
         test_infoclass.save_infoclass()
         self.assertEqual(len(Info.sitepass_list),2)
 
+    def test_delete_account(self):
+        '''
+        test_delete_contact to test if we can remove a contact from our contact list
+        '''
+        self.new_infoclass.save_infoclass()
+        test_infoclass = Info("platform","password") # new contact
+        test_infoclass.save_infoclass()
 
+        self.new_infoclass.delete_sitepass()# Deleting a contact object
+        self.assertEqual(len(Info.sitepass_list),1)
+        
 if __name__ == '__main__':
     unittest.main()

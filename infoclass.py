@@ -19,4 +19,12 @@ class Info :
     '''
     Info.sitepass_list.append(self)
 
+  def delete_sitepass(self):
+
+    '''
+    delete_contact method deletes a saved contact from the contact_list
+    '''
+
+    Info.sitepass_list.remove(self)
+
     
