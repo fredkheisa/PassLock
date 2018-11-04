@@ -24,24 +24,15 @@ class Account:
 
   def delete_account(self):
 
-        '''
-        delete_account method deletes a saved account from the account_list
-        '''
+    '''
+    delete_account method deletes a saved account from the account_list
+    '''
 
-        Account.account_list.remove(self)
-  
+    Account.account_list.remove(self) 
 
   @classmethod
-  def find_by_number(cls,number):
-      '''
-      Method that takes in a number and returns a contact that matches that number.
-
-      Args:
-          number: Phone number to search for
-      Returns :
-          Contact of person that matches the number.
-      '''
-
-      for accclass in cls.account_list:
-          if accclass.phone_number == number:
-              return accclass
+  def display_accounts(cls):
+    '''
+     method that returns the contact list
+    '''
+    return cls.account_list

@@ -1,6 +1,7 @@
 import unittest # Importing the unittest module
 from accclass import Account # Importing the contact class
 
+
 class TestAccount(unittest.TestCase):
 
     '''
@@ -51,30 +52,15 @@ class TestAccount(unittest.TestCase):
         self.assertEqual(len(Account.account_list),2)
 
     def test_delete_account(self):
-            '''
-            test_delete_contact to test if we can remove a contact from our contact list
-            '''
-            self.new_accclass.save_accclass()
-            test_accclass = Account("Test","user","0712345678","test@user.com") # new contact
-            test_accclass.save_accclass()
-
-            self.new_accclass.delete_account()# Deleting a contact object
-            self.assertEqual(len(Account.account_list),1)
-
-
-    def test_find_contact_by_number(self):
         '''
-        test to check if we can find a contact by phone number and display information
+        test_delete_contact to test if we can remove a contact from our contact list
         '''
-
         self.new_accclass.save_accclass()
-        test_accclass = Account("Test","user","0711223344","test@user.com") # new contact
+        test_accclass = Account("Test","user","0712345678","test@user.com") # new contact
         test_accclass.save_accclass()
 
-        found_accclass = account.find_by_phone_number("0711223344")
-
-        self.assertEqual(found_accclass.email,test_accclass.email)
-
-
+        self.new_accclass.delete_account()# Deleting a contact object
+        self.assertEqual(len(Account.account_list),1)
+        
 if __name__ == '__main__':
     unittest.main()
