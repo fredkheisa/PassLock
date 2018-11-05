@@ -13,12 +13,14 @@ class Info :
     self.password = password
 
 
+
   def save_infoclass(self):
 
     '''
     save_account method saves account objects into account_list
     '''
     Info.sitepass_list.append(self)
+
 
   def delete_sitepass(self):
 
