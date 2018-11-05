@@ -12,6 +12,7 @@ class Info :
     self.platform = platform
     self.password = password
 
+
   def save_infoclass(self):
 
     '''

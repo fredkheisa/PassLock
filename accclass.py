@@ -22,6 +22,7 @@ class Account:
     '''
     Account.account_list.append(self)
 
+
   def delete_account(self):
 
     '''
@@ -29,7 +30,7 @@ class Account:
     '''
 
     Account.account_list.remove(self) 
-    
+
 
   @classmethod
   def display_accounts(cls):
