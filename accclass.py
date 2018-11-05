@@ -29,10 +29,11 @@ class Account:
     '''
 
     Account.account_list.remove(self) 
+    
 
   @classmethod
   def display_accounts(cls):
     '''
-     method that returns the contact list
+    method that returns the contact list
     '''
     return cls.account_list
